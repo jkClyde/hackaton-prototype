@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- Web Page Title -->
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+        <title>Page</title>
+    {% endif %}
+ <!-- End Page Title -->
+   </head>
+<body>
+
+  <!-- SIDE BAR-->
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bx-menu' ></i>
+      
+      <span class="logo_name">Monitoring System</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="{{ url_for('dashboard') }}">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Dashboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{{ url_for('form') }}" >
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name" id="btn_form" >Forms</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Forms</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Database</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Database</a></li>
+          <li><a href="{{url_for('table')}}">Patients Table </a></li>
+          <li><a href="{{url_for('users')}}">Users</a></li>
+
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link" >
+          <a href="{{url_for('save')}}">
+            <i class='bx bx-book-alt' ></i>
+            <span class="link_name">Excel Files</span>
+          </a>
+
+        </div>
+       
+      </li>
+      <li>
+        <a href="{{url_for('analytics')}}">
+          <i class='bx bx-pie-chart-alt-2' ></i>
+          <span class="link_name">Analytics</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Analytics</a></li>
+        </ul>
+      </li>   
+    
+      <li>
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name">Clyde Igop</div>
+        <div class="job">Administrator</div>
+      </div>
+      <i class='bx bx-log-out' ></i>
+    </div>
+  </li>
+</ul>
+  </div>
+
+  <!-- ENDSIDE BAR-->
+
+
+   <!-- CONTENT-->
+  <section class="home-section"  >
+
+      <!-- LOGO     <div class="home-content">   </div> HERE-->
+       <!-- CONTENTS HERE -->
+       {%block content%}
+       {%endblock content%}
+      
+     
+        <!-- End content-->
+    </section>
+<!-- END CONTENT-->
+
+
+<!-- JS-->     
+<script>
+ function checkScreenWidth() {
+  try {
+    var screenWidth = window.innerWidth;
+    var sidebar = document.querySelector(".sidebar");
+
+    if (sidebar) {
+      if (screenWidth < 768) {
+        sidebar.classList.add("close");
+      } else if (screenWidth >= 768 && screenWidth <= 1024) {
+        // For tablet devices
+        sidebar.classList.add("close");
+        // Add additional code for tablet layout
+      } else {
+        // For desktop devices
+        sidebar.classList.remove("close");
+        // Add additional code for desktop layout
+      }
+    } else {
+      console.error("Sidebar element not found.");
+    }
+  } catch (error) {
+    console.error("Error in checkScreenWidth:", error);
+  }
+}
+
+// Call checkScreenWidth on page load and on window resize
+window.addEventListener("load", checkScreenWidth);
+window.addEventListener("resize", checkScreenWidth);
+
+
+
+
+
+
+      
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+      arrow[i].addEventListener("click", (e)=>{
+    let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+    arrowParent.classList.toggle("showMenu");
+      });
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", ()=>{
+      sidebar.classList.toggle("close");
+    });
+
+
+ 
+    </script>
+<!-- JS END--> 
+
+
+
+
+  <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+</body>
+</html>

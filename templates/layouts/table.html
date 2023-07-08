@@ -1,0 +1,349 @@
+{% extends "layouts/sidebar.html"%}
+
+{%block content%}
+  <div class="dropdown show" style="background-color: #212429; border: #212429; padding: 2% 0% 2% 2%;" >
+      <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Barangay <span class="dropdown-selected">Alapang</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Alapang</a>
+                <a class="dropdown-item" href="#">Alno</a>
+                <a class="dropdown-item" href="#">Ambiong</a>
+                <a class="dropdown-item" href="#">Bahong</a>
+                <a class="dropdown-item" href="#">Balili</a>
+                <a class="dropdown-item" href="#">Beckel</a>
+                <a class="dropdown-item" href="#">Betag</a>
+                <a class="dropdown-item" href="#">Bineng</a>
+                <a class="dropdown-item" href="#">Cruz</a>
+                <a class="dropdown-item" href="#">Lubas</a>
+                <a class="dropdown-item" href="#">Pico</a>
+                <a class="dropdown-item" href="#">Poblacion</a>
+                <a class="dropdown-item" href="#">Puguis</a>
+                <a class="dropdown-item" href="#">Shilan</a>
+                <a class="dropdown-item" href="#">Tawang</a>
+                <a class="dropdown-item" href="#">Wangal</a>
+        </div>
+
+        <div class="container my-4">
+            <form>
+              <div class="form-group row align-items-center">
+                <label for="weight-filter"  class="col-sm-3 col-form-label" style="color: #cacaca">Filter by Nutrional Status:</label>
+                <div class="col-sm-3">
+                  <select class="form-control" id="weight-filter">
+                    <option selected disabled>Select</option>
+                    <option value="greater">Stunted</option>
+                    <option value="equal">Underweight</option>
+                    <option value="lesser">Overweight</option>
+                  </select>
+                </div>
+              
+              </div>
+              <div class="form-group row justify-content-center">
+                <div class="col-sm-4 p-1">
+                  <button type="submit" class="btn btn-primary btn-block">Apply Filter</button>
+                </div>
+                <div class="col-sm-4 p-1">
+                    <button type="submit" class="btn btn-info btn-block">Add  Filter</button>
+                </div>
+                <div class="col-sm-4 p-1">
+                    <button type="submit" class="btn btn-danger btn-block">Clear  Filter</button>
+                  </div>
+                  
+              </div>
+            </form>
+          </div>
+  </div>
+
+<div class="table-responsive" >
+    
+    <table class="table" >
+        
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Action</th>
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Birthday</th>
+                <th scope="col">Address</th>
+                <th scope="col">Bilateral Pitting Edema</th>
+                <th scope="col">Disability</th>
+                <th scope="col">Residency</th>
+                <th scope="col">Father's Name</th>
+                <th scope="col">Father's Ethnicity</th>
+                <th scope="col">Father's Occupation</th>
+                <th scope="col">Mother's Name</th>
+                <th scope="col">Mother's Ethnicity</th>
+                <th scope="col">Mother's Occupation</th>
+                <th scope="col">Date of Weigh</th>
+                <th scope="col">Height(m)</th>
+                <th scope="col">Weight(lbs)</th>
+                <th scope="col">BMI Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example" >
+                      <button type="button" class="btn btn-danger" style="margin-right: 2%;">Delete</button>
+                      
+                      <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                  </td>
+                <th scope="row">1</th>
+                <td>Nemya I. Niwan</td>
+                <td>Female</td>
+                <td>01/01/2017</td>
+                <td>123 Main St.</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>Cruz</td>
+                <td>John Niwan</td>
+                <td>Kankanaey</td>
+                <td>Engineer</td>
+                <td>Jane Niwan</td>
+                <td>Kankanaey</td>
+                <td>Doctor</td>
+                <td>05/01/2023</td>
+                <td>115</td>
+                <td>18.5</td>
+                <td>24.4</td>
+              </tr>
+              <tr>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example" >
+                      <button type="button" class="btn btn-danger" style="margin-right: 2%;">Delete</button>
+                      
+                      <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                  </td>
+                <th scope="row">2</th>
+                <td>Charles Atonensky</td>
+                <td>Male</td>
+                <td>02/14/2018</td>
+                <td>456 Mauhay St.</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Lubas</td>
+                <td>Charles Sr.</td>
+                <td>Russian</td>
+                <td>Lawyer</td>
+                <td>Sara Atonensky</td>
+                <td>Ibaloi</td>
+                <td>Nurse</td>
+                <td>05/01/2023</td>
+                <td>118</td>
+                <td>22.3</td>
+                <td>23.4</td>
+              </tr>
+              <tr>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example" >
+                      <button type="button" class="btn btn-danger" style="margin-right: 2%;">Delete</button>
+                      
+                      <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                  </td>
+                <th scope="row">3</th>
+                <td>Jim Bagay </td>
+                <td>Male</td>
+                <td>05/25/2018</td>
+                <td>789 Elm St.</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Kalinga</td>
+                <td>Frank Bagay</td>
+                <td>White</td>
+                <td>Teacher</td>
+                <td>Samantha Bagay</td>
+                <td>Ilocano</td>
+                <td>Engineer</td>
+                <td>05/01/2023</td>
+                <td>22.3</td>
+                <td>23.4</td>
+                <td>25.1</td>
+              </tr>
+              <tr>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example" >
+                      <button type="button" class="btn btn-danger" style="margin-right: 2%;">Delete</button>
+                      
+                      <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                  </td>
+                <th scope="row">4</th>
+                <td>Jack Amu</td>
+                <td>Male</td>
+                <td>11/13/2023</td>
+                <td>246 Pine St.</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>Bontoc</td>
+                <td>Mike Amu</td>
+                <td>Asian</td>
+                <td>Doctor</td>
+                <td>Karen Amu</td>
+                <td>Bontoc</td>
+                <td>Teacher</td>
+                <td>05/01/2023</td>
+                <td>22.3</td>
+                <td>23.4</td>
+                <td>20.8</td>
+              </tr>
+              <tr>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example" >
+                      <button type="button" class="btn btn-danger" style="margin-right: 2%;">Delete</button>
+                      
+                      <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                  </td>
+                <th scope="row">5</th>
+                <td>Jeremy Tapalking</td>
+                <td>Mali</td>
+                <td>08/08/1975</td>
+                <td>369 Maple St.</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Bontoc</td>
+                <td>Thomas  Tapalking</td>
+                <td>Black</td>
+                <td>Engineer</td>
+                <td>Lisa  Tapalking</td>
+                <td>Ameican</td>
+                <td>Accountant</td>
+                <td>05/01/2023</td>
+                <td>22.3</td>
+                <td>23.4</td>
+                <td>23.7</td>
+              </tr>
+              <tr>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example" >
+                      <button type="button" class="btn btn-danger" style="margin-right: 2%;">Delete</button>
+                      
+                      <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                  </td>
+                <th scope="row">6</th>
+                <td>Cristine A. Reyes</td>
+                <td>Female</td>
+                <td>03/21/1992</td>
+                <td>147 Oak St.</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Korea</td>
+                <td>David Reyes</td>
+                <td>Asian</td>
+                <td>Lawyer</td>
+                <td>Sarah Reyes</td>
+                <td>Asian</td>
+                <td>Doctor</td>
+                <td>05/01/2023</td>
+                <td>22.3</td>
+                <td>23.4</td>
+                <td>20.6</td>
+              </tr>
+
+              <tr>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example" >
+                      <button type="button" class="btn btn-danger" style="margin-right: 2%;">Delete</button>
+                      
+                      <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                  </td>
+                <th scope="row">6</th>
+                <td>Nigeeel Sins</td>
+                <td>Male</td>
+                <td>03/21/2020</td>
+                <td>147 Oak St.</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Korea</td>
+                <td>John Sins </td>
+                <td>Asian</td>
+                <td>Lawyer</td>
+                <td>Sarah Sins</td>
+                <td>Asian</td>
+                <td>Doctor</td>
+                <td>05/01/2023</td>
+                <td>22.3</td>
+                <td>23.4</td>
+                <td>20.6</td>
+              </tr>
+
+              <tr>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example" >
+                      <button type="button" class="btn btn-danger" style="margin-right: 2%;">Delete</button>
+                      
+                      <button type="button" class="btn btn-primary">Update</button>
+                    </div>
+                  </td>
+                <th scope="row">6</th>
+                <td>Clyde Igop</td>
+                <td>Male</td>
+                <td>03/21/2023</td>
+                <td>147 Oak St.</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Saiyan</td>
+                <td>Charles</td>
+                <td>Asian</td>
+                <td>Lawyer</td>
+                <td>Nemya</td>
+                <td>Namek</td>
+                <td>Doctor</td>
+                <td>05/01/2023</td>
+                <td>7 footer</td>
+                <td>23.4</td>
+                <td>20.6</td>
+              </tr>
+
+              
+              </tbody>
+      </table>
+</div>
+
+  <script>
+      // Get the dropdown element
+      var dropdown = document.querySelector('.dropdown');
+
+      // Get the button element inside the dropdown
+      var dropdownButton = dropdown.querySelector('.dropdown-toggle');
+
+      // Get the menu element inside the dropdown
+      var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+      // Get all the dropdown items inside the menu
+      var dropdownItems = dropdownMenu.querySelectorAll('.dropdown-item');
+
+      // Add a click event listener to the dropdown button
+      dropdownButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          dropdown.classList.toggle('show');
+      });
+
+      // Add click event listeners to all the dropdown items
+      dropdownItems.forEach(function(item) {
+          item.addEventListener('click', function() {
+              // Set the text of the selected item as the dropdown selected text
+              dropdown.querySelector('.dropdown-selected').textContent = item.textContent;
+          });
+      });
+
+      // Close the dropdown when clicking outside of it
+      window.addEventListener('click', function(e) {
+          if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('show');
+          }
+      });
+  </script>
+
+
+
+
+   
+
+{%endblock content%}

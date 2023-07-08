@@ -1,0 +1,71 @@
+!{% extends "layouts/sidebar.html" %} 
+
+{%block content%}
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 text-center">
+      <label for="formFileLg" class="form-label">Import File (Excel, CSV)</label>
+      <input class="form-control form-control-lg" id="formFileLg" type="file" />
+      <a href="path/to/file" class="btn btn-primary mt-3">Upload</a>
+    </div>
+  </div>
+
+
+  <div class="card mt-3">
+    <div class="card-header">List of Files</div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-4 ">lubas_report.xlsc</div>
+          <div class="col-3 ">May 1, 2023</div>
+          <div class="flex-grow-0 ml-2"><a href="#" class="btn btn-primary">Download</a></div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-4">alapang_report.xlsc</div>
+          <div class="col-3">April 29, 2023</div>
+          <div class="flex-grow-0 ml-2"><a href="#" class="btn btn-primary">Download</a></div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-4">Pugis.xlsx</div>
+          <div class="col-3">April 27, 2023</div>
+          <div class="flex-grow-0 ml-2"><a href="#" class="btn btn-primary">Download</a></div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-4">Poblacion.xlsx</div>
+          <div class="col-3">April 25, 2023</div>
+          <div class="flex-grow-0 ml-2"><a href="#" class="btn btn-primary">Download</a></div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-4">Tawang.xlsx</div>
+          <div class="col-3">April 20, 2023</div>
+          <div class="flex-grow-0 ml-2"><a href="#" class="btn btn-primary">Download</a></div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-4">Beckel.xlsx</div>
+          <div class="col-3">April 18, 2023</div>
+          <div class="flex-grow-0 ml-2"><a href="#" class="btn btn-primary">Download</a></div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="d-flex align-items-center">
+          <div class="col-4">Beckel_april.xlsx</div>
+          <div class="col-3">April 18, 2023</div>
+          <div class="flex-grow-0 ml-2"><a href="#" class="btn btn-primary">Download</a></div>
+        </div>
+      </li>
+    </div>
+  </div>
+    
+  
+  
+{%endblock content%}

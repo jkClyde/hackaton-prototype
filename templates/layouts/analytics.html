@@ -1,0 +1,69 @@
+{% extends "layouts/sidebar.html"%}
+{%block content%}
+
+<div class="row p-2">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" style="background: #e5e6f8;">
+      <h1>Bar Graph</h1>
+      <img src="{{ population_chart }}" alt="Bar Chart" class="img-fluid">
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+      <h1>Pie Chart</h1>
+      <img src="{{ pie_chart }}" alt="Pie Chart" class="img-fluid">
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+      <h1>Line Graph</h1>
+      <img src="{{ line_chart }}" alt="Line Chart" class="img-fluid">
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+      <h1>Scatter Plot</h1>
+      <img src="{{ scatter_plot }}" alt="Scatter Plot" class="img-fluid">
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+      <h1>Stacked Bar Chart</h1>
+      <img src="{{ sb_chart}}" alt="Stacked Bar Chart" class="img-fluid">
+    </div>
+</div>
+
+<style>
+    /* Media queries for different screen sizes */
+    @media (max-width: 1199px) {
+        .col-xl-6 {
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .col-xl-6 {
+            width: 100%;
+        }
+    }
+
+    /* Responsive images */
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+
+<style>
+    /* Media queries for different screen sizes */
+    @media (max-width: 1199px) {
+        .col-xl-6 {
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .col-xl-6 {
+            width: 100%;
+        }
+    }
+</style>
+  
+  
+  
+  
+  
+  
+{%endblock content%}

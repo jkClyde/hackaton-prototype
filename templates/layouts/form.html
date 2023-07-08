@@ -1,0 +1,291 @@
+{% extends "layouts/sidebar.html" %}
+{% block content%}
+<div class="container" >
+    
+  <form action="Add.php" role="form" class="" id="myForm" method="post" >
+      <div class="form-group">
+          <br>
+          <h2 class = "neonlight animate-flicker" style="text-align:left; font-weight:bold; color: #046b6b; text-shadow: 0 0 1px #00ffff;">Patient's Profile</h2>  
+      </div>
+      
+      <!--First Row-->
+      <div class="row " style="padding-bottom: 1%;">
+          <div class="col-sm-5">
+              <label style="font-size:15px;">Full Name</label>
+              <input required class="form-control" placeholder="Full Name" type="text" required> 
+          </div>
+
+          <div class="col-md-3">
+            <label for="sex" class="form-label">Sex</label>
+            <select name="sex" id="sex" class="form-control" required>
+              <option value="">--- Select ---</option>
+              <option value="male" >Male</option>
+              <option value="female" >Female</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label for="birthday" class="form-label">Birthday</label>
+            <input type="text" class="form-control" id="birthday" placeholder="Birthday" required>
+          </div> 
+      </div>
+
+       <!--Second Row-->
+  
+      <div class="row">
+           <div class="col-sm-5">
+              <label style="font-size:15px;">Address</label>
+              <input required class="form-control" placeholder="Address" type="text" required> 
+          </div>
+
+            <div class="col-md-4">
+                  <label for="bipied" class="form-label">Bilateral Pitting Edema</label>
+                  <select name="bipied" id="bipied" class="form-control">
+                    <option value="">--- Option ---</option>
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                  </select>
+            </div>
+
+          <div class="col-md-3">
+            <label for="disability" class="form-label">Disability</label>
+            <input type="text" class="form-control" id="disability" placeholder="Disability" required> 
+            <br> 
+          </div>     
+           
+      </div>
+
+   <!--Test-->
+        <div class="row">
+          <div class="col-md-4">
+            <label for="Residency" class="form-label">Residency</label>
+            <select name="Residency" id="Residency" class="form-control">
+              <option value="">--- Option ---</option>
+              <option value="permanent">Permanent</option>
+              <option value="temporary" >Temporary</option>
+            </select>
+          </div>
+
+          <div class="col-md-2 " style="padding-bottom: 1%;" id="div_residency">
+            <label class="form-label text-danger" id="lbl_res_years">For Permanent Residency, Please answer the following  </label>
+          </div>
+
+          <div class="col-md-2 " style="padding-bottom: 1%;" id="div_year">
+            <label class="form-label" id="lbl_res_years">Years </label>
+            <input type="text" class="form-control" id="res_years" placeholder="Year/s" required>
+          </div>
+
+          <div class="col-md-2 " style="padding-bottom: 1%;" id="div_month">
+            <label class="form-label" id="lbl_res_months">Months </label>
+            <input type="text" class="form-control" id="res_months" placeholder="Month/s" required>
+          </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        $(document).ready(function() {
+          // hide the if_yes field by default
+          $('#div_year').hide()
+          $('#div_month').hide();
+         $('#div_residency').hide();
+       
+
+          // listen for changes in the select box
+          $('#Residency').change(function() {
+            if ($(this).val() === 'temporary') {
+       
+              $('#div_month').hide();
+              $('#div_year').hide()
+             // $('#div_residency').hide();
+            } else {
+              $('#div_month').show();
+              $('#div_year').show()
+              $('#div_residency').show();
+  
+                  // listen for changes in the year and month input fields
+                    $('#res_years, #res_months').change(function() {
+                      if ($('#res_years').val() && $('#res_months').val()) {
+                        // if either input has a value, hide the div_residency
+                        $('#div_residency').hide();
+                      } else {
+                        // if neither input has a value, show the div_residency
+                        $('#div_residency').show();
+                      }
+                    });
+        
+            }
+
+          })
+        }); //End of Document
+        </script>
+
+  <!--End Test-->
+
+                  <!-- H2 Parents Information-->
+                  <div class="form-group">
+                    <br>
+                    <h2 style="text-align:left; font-weight:bold; color: #046b6b; text-shadow: 0 0 1px #00ffff;">Parent's Information</h2>
+                  </div>
+                  
+                  <!-- H2 Parents Information-->
+            
+       <!--Third Row-->
+      <div class="row">
+        <div class="col-md-5" style="padding-bottom: 1%;">
+          <label for="age" class="form-label">Father's Name</label>
+          <input type="text" class="form-control" id="Age" placeholder="Father's Name" required>
+        </div>
+
+        <div class="col-md-4">
+          <label for="occupation" class="form-label">Occupation</label>
+          <input type="text" class="form-control" id="occupation" placeholder="Occupation" required>
+        </div>
+
+        <div class="col-md-3  ">
+          <label for="hea" class="form-label">Ethnicity</label>
+          <input type="text" class="form-control" id="hea" placeholder="Ethnicity" required>
+        </div>
+      </div>
+
+      <!--Fourth Row-->
+      <div class="row">
+        <div class="col-md-5  ">
+          <label for="age" class="form-label">Mother's Name</label>
+          <input type="text" class="form-control" id="Age" placeholder="Mother's Name" required>
+        </div>
+
+        <div class="col-md-4">
+          <label for="occupation" class="form-label">Occupation</label>
+          <input type="text" class="form-control" id="occupation" placeholder="Occupation" required>
+        </div>
+
+        <div class="col-md-3">
+          <label for="hea" class="form-label">Ethnicity</label>
+          <input type="text" class="form-control" id="hea" placeholder="Ethnicity" required>
+        </div>
+      </div>
+              <!-- H2 Parents Information-->
+              <br>
+                  <div class="form-group ">
+                      <h2 class = "neonlight animate-flicker" style="text-align:left; font-weight:bold; color: #046b6b; text-shadow: 0 0 1px #00ffff;">Nutritional Status</h2>  
+                  </div>
+              <!-- H2 Parents Information-->
+
+       <!--Fifth Row     Nutrional Status-->
+      <div class="row">
+           <div class="col-md-3">
+              <label for="DoW" class="form-label">Date of Weigh</label>
+              <input type="text" class="form-control" id="DoW" placeholder="Date of Weigh" required>
+            </div>
+
+            <div class="col-md-2">  
+              <label for="height" class="form-label">Height</label>
+              <input type="text" class="form-control" id="height" placeholder="0.00" required>
+            </div>
+
+            <div class="col-md-2">
+              <label for="weight" class="form-label">Weight</label>
+              <input type="text" class="form-control" id="weight" placeholder="0.00" required>
+              <br>  
+            </div>
+
+            <div class="col-md-2">
+              <label for="weight" class="form-label" id="bmi_result"> Result:</label><br>
+            </div>
+      </div>
+
+      
+       <!--Additonal Row Row------------------------------------------------
+
+       
+        <br>
+        <div class="form-group " id="additional_header">
+            <h2 class = "neonlight animate-flicker" style="text-align:left; font-weight:bold; color: #d4001c; text-shadow: 0 0 1px #00ffff;">Additional Form For Patients on Malnurished Category</h2>  
+        </div>
+    
+
+
+        <div class="row" id="additional_row">
+          <div class="col-md-5  ">
+            <label for="age" class="form-label">Mother's Name</label>
+            <input type="text" class="form-control" id="item1" placeholder="Mother's Name" required>
+          </div>
+
+          <div class="col-md-4">
+            <label for="occupation" class="form-label">Occupation</label>
+            <input type="text" class="form-control" id="item2" placeholder="Occupation" required>
+          </div>
+
+          <div class="col-md-3">
+            <label for="hea" class="form-label">Ethnicity</label>
+            <input type="text" class="form-control" id="item3" placeholder="Ethnicity" required>
+            <br>
+          </div>
+        </div>
+       -->
+
+        <!--
+              <script>
+                   $('#additional_row').hide()
+                   $('#additional_header').hide()
+
+                // Get the weight and height inputs
+                const weightInput = document.getElementById('weight');
+                const heightInput = document.getElementById('height');
+
+                // Add an event listener to the weight and height inputs
+                weightInput.addEventListener('input', calculateBMI);
+                heightInput.addEventListener('input', calculateBMI);
+
+                function calculateBMI() {
+                    // Get the weight and height values
+                    const weight = parseFloat(weightInput.value);
+                    const height = parseFloat(heightInput.value);
+
+                    // Calculate the BMI
+                    const bmi = weight / Math.pow(height, 2);
+
+                    if (!isNaN(bmi)) {
+                    // update the text content of the label with the calculated BMI
+                    document.getElementById('bmi_result').textContent = "BMI Result : "+bmi.toFixed(2);
+                    } else {
+                    // clear the text content of the label if the calculated BMI is not a valid number
+                    document.getElementById('bmi_result').textContent = "BMI Result : ";
+                    }
+                  
+
+
+                    // Check if the BMI is under 18.5
+                    if (bmi < 18.5) {
+                        // Show the additional form
+                        $('#additional_row').show()
+                        $('#additional_header').show()
+                    } else {
+                        // Hide the additional form
+                        $('#additional_row').hide()
+                        $('#additional_header').hide()
+                    }
+                }
+              </script>
+
+              -->
+
+       <!--END Additonal Row Row-------------------------------------------------------------->
+
+
+       <!--Button Row-->
+      <div class="row" style="background-color: #ffffff; padding: 10px;">
+          <div class="row text-center">
+            <div class="col-md-12">
+              <button id="btn_clear" type="button" class="btn btn-info mr-4">Clear</button>
+              <button type="submit" class="btn btn-info mx-2" value="add">Add</button>
+              <button id="btn_update" type="button" class="btn btn-info ml-2" value="update">Update</button>
+            </div>
+          </div>
+        </div>
+  </form>    
+  </div>
+
+
+
+{% endblock content%}
